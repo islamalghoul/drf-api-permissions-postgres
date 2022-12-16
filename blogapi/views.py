@@ -15,8 +15,8 @@ class BlogListView(ListCreateAPIView):
 
 
 class BlogDetailView(RetrieveUpdateDestroyAPIView):
-    queryset=Post.objects.all()
-    serializer_class= PostSerializer
+    queryset=Blog.objects.all()
+    serializer_class= BlogSerializer
     permission_classes=[IsOwnerOrReadOnly]
 
 
@@ -27,6 +27,6 @@ class PostListView(ListCreateAPIView):
 
 
 class PostDetailView(RetrieveUpdateDestroyAPIView):
-    queryset=Blog.objects.all()
-    serializer_class= BlogSerializer
+    queryset=Post.objects.all()
+    serializer_class= PostSerializer
     permission_classes=[IsAuthenticatedOrReadOnly]
